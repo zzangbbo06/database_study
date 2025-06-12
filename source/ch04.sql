@@ -78,11 +78,11 @@ VALUES
 SELECT * FROM employees;
 
 -- 모든 직원 수 세기
-SELECT count(*)
+SELECT COUNT(*)
 FROM employees;
 -- null값 상관없음
 
-SELECT count(department)
+SELECT COUNT(department)
 FROM employees;
 -- null값 제외하고 세기
 
