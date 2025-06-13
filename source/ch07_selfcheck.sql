@@ -39,3 +39,25 @@ SELECT filename, nickname
 FROM photos p
 RIGHT JOIN users u ON p.user_id = u. id
 );
+--------------------------------------------------------------------
+-- 1. 사용자 닉네임과 계정 공개 여부 조회
+SELECT 
+	nickname AS 닉네임,
+    private AS '계정 공개 여부'
+FROM users u
+JOIN settings s ON u.id = s.user_id;
+
+-- 2. 사진 파일명과 올린 사람 닉네임 조회
+SELECT 
+	filename AS 파일명,
+    nickname AS 게시자
+FROM photos p
+JOIN users u ON p.user_id = u.id;
+
+-- 3. 모든 사진 파일명과 올린 사람 닉네임 조회
+SELECT 
+	filename AS 파일명,
+    nickname AS 게시자
+FROM photos p
+LEFT JOIN users u ON p.user_id = u.id;
+
