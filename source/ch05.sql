@@ -111,7 +111,7 @@ VALUES
 
 CREATE TABLE addresses(
   potal_code CHAR(5), -- 우편번호(고정 길이 문자: 5자), 주로 고정된 길이의 코드값(예: 국가코드)
-  -- 문자를 3개만 너흔 경우, 자동으로 공백(space) 문자를 채움(예: 'abc  ')
+  -- 문자를 3개만 넣은 경우, 자동으로 공백(space) 문자를 채움(예: 'abc  ')
   street_address VARCHAR(100), -- 거리 주소(가변 길이 문자: 최대 100자)
   -- 최대 100글자 저장 가능하지만, 사용 메모리는 입력된 문자만큼만 사용(예: 'abc')
   -- (참고) UTF-8 기준, VARCHAR(65535)는 현실적으로 불가능하고 VARCHAR(16383) 정도가 안전한 최대치
@@ -127,7 +127,7 @@ CREATE TABLE addresses(
 
 CREATE TABLE acticles(
   title VARCHAR(200), -- 제목(가변 길이 문자: 최대 200자)
-  short_description, -- 짧은 설명(최대 255Byte)
+  short_description TINYTEXT , -- 짧은 설명(최대 255Byte)
   comments TEXT, -- 댓글(최대 64KB)
   content, MEDIUMTEXT, -- 본문(최대 16MB)
   additional_info LONGTEXT, -- 추가 정보(최대 4GB)
